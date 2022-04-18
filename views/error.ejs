@@ -1,0 +1,15 @@
+<% layout('layouts/boilerplate')%> <!-- manda essa página para o  body  de boilerplate-->
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading"><%=err.message%></h4>
+            <!-- encobre de mostrar o stack trace (caminhinho para achar o erro) quando um erro ocorre -->
+            <% if (process.env.NODE_ENV !== "production") { %> 
+            <p><%= err.stack %></p><p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+            <% } %>     
+        </div>
+        
+    </div>
+</div>
+
