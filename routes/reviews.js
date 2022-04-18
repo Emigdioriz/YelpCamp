@@ -6,12 +6,12 @@ const Campground = require('../models/campground');
 const Review = require('../models/review');
 
 const ExpressError = require('../utils/ExpressError');
-const catchAsync = require('../utils/catchAsync');
+const ViewAsync = require('../utils/ViewAsync');
 
 //posta o review
-router.post('/', isLoggedIn, validateReview, catchAsync(reviews.createReview));
+router.post('/', isLoggedIn, validateReview, ViewAsync(reviews.createReview));
 
 //deleta o review
-router.delete('/:reviewId', isLoggedIn, isReviewAuthor, catchAsync(reviews.deleteReview));
+router.delete('/:reviewId', isLoggedIn, isReviewAuthor, ViewAsync(reviews.deleteReview));
 
 module.exports = router;

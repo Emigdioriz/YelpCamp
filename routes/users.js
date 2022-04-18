@@ -2,7 +2,7 @@ const express = require('express');
 const user = require('../models/user');
 const router = express.Router();
 const passport = require('passport');
-const catchAsync = require('../utils/catchAsync');
+const ViewAsync = require('../utils/ViewAsync');
 const User = require('../models/user');
 const users = require('../controllers/users');
 const { route } = require('./campgrounds');
@@ -13,7 +13,7 @@ const { NativeError } = require('mongoose');
 //REGISTERING
 router.route('/register')
     .get(users.renderRegister)
-    .post(catchAsync(users.register))
+    .post(ViewAsync(users.register))
 
 //LOGIN
 router.route('/login')
