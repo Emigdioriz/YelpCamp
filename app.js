@@ -47,7 +47,7 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(mongoSanitize());// protege o query de comandos externos
 
-const secret = prorcess.env.SECRET || 'thisismysecret';
+const secret = process.env.SECRET || 'thisismysecret';
 
 const store = MongoStore.create({
     mongoUrl: dbURL,
