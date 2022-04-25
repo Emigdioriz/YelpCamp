@@ -2,9 +2,13 @@ mapboxgl.accessToken = mapboxToken;
 const map = new mapboxgl.Map({
 container: 'cluster-map',
 style: 'mapbox://styles/mapbox/light-v10',
-center: [-103.5917, 40.6699],
+center: [-50.919572, -14.475376],// coordenadas de longitude e latitude do centro da brasil, aproximado
 zoom: 3
 });
+
+
+
+
 
 map.addControl(new mapboxgl.NavigationControl());
  
